@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - The Gallery Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Link your CSS file -->
+    <style>
+        body {
+            background-image: url(../images/img16.jpg);
+        }
+        header img {
+            max-height: 60px; 
+            position: relative;
+            top: 10px; 
+            left: -40px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="../images/logo2.png" alt="The Gallery Cafe Logo">The Gallery Cafe</h1>
+        <nav>
+            <ul>
+                <li><a href="login.html">Logout</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <main class="main-content transparent-background">
+            <h2>Staff Dashboard</h2>
+            <div id="staffOptions">
+                <button onclick="showSection('manageOrders')">Manage Orders</button>
+                <button onclick="showSection('manageReservations')">Manage Reservations</button>
+            </div>
+
+            <div id="manageOrders" class="staff-section" style="display:none;">
+                <h3>Manage Orders</h3>
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Address</th>
+                            <th>Items</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Orders will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="manageReservations" class="staff-section" style="display:none;">
+                <h3>Manage Reservations</h3>
+                <table id="reservationsTable">
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Customer Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Guests</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Reservations will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Gallery Cafe. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/staff_dashboard.js"></script>
+</body>
+</html>

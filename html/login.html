@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url(../images/img7.jpg);
+        }
+        header img {
+            max-height: 60px; 
+            position: relative;
+            top: 10px; 
+            left: -40px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Login - The Gallery Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1><img src="../images/logo2.png" alt="The Gallery Cafe Logo">The Gallery Cafe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Events & Promotions</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content transparent-background login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="login(event)">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <div class="password-toggle">
+                <input type="checkbox" id="showPassword" onclick="togglePassword()">
+                <label for="showPassword" class="show-password-label">Show Password</label>
+            </div>
+            
+            <div class="form-actions">
+                <input type="submit" value="Login">
+                <div class="register-link">
+                    <p>Don't have an account? <a href="register.html">Register</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Gallery Cafe</p>
+    </footer>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

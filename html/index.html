@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* h2 {
+            text-shadow: 6px 6px 5px black;
+        }
+        p {
+            text-shadow: 3px 3px 5px black; 
+        } */
+        body{
+            background-image: url(../images/img1.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        /* footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        } */
+        header img {
+            max-height: 60px;
+            position: relative;
+            top: 10px;
+            left: -40px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="30">
+    <title>The Gallery Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!--navbar-->
+    <header>
+        <h1><img src="../images/logo2.png" alt="The Gallery Cafe Logo">The Gallery Cafe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Events & Promotions</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>              
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="../images/Pizza_Offer2.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="../images/Pasta1.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="../images/Rice_cock_offer1.png" style="width:100%">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <!-- The dots-->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <!--home page-->
+    <div class="home">
+        <main style="padding-top: -100px;">
+            <h2 style="color: white;">Welcome to Our Restaurant</h2>
+            <p style="color: white;">Experience the best dining with us!</p>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 The Gallery Cafe</p>
+    </footer>
+<script src="../js/index.js"></script>
+</body>
+</html>

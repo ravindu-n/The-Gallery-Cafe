@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - The Gallery Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            background-image: url("../images/img15.jpg");
+        }
+        header img {
+            max-height: 60px;
+            position: relative;
+            top: 10px; 
+            left: -40px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <h1><img src="../images/logo2.png" alt="The Gallery Cafe Logo">The Gallery Cafe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Events & Promotions</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="event-container transparent-background">
+        <h2>Upcoming Events and Specials</h2>
+
+        <!-- Example Event Item -->
+        <div class="event-item">
+            <img src="../images/summer-bbq.jpg" alt="Summer BBQ Night">
+            <div>
+                <h3>Summer BBQ Night</h3>
+                <p>Join us for an exciting evening of delicious BBQ under the stars!</p>
+                <div class="event-details">
+                    <span><strong>Date:</strong> August 15, 2024</span>
+                    <span><strong>Table Capacity:</strong> Up to 100 guests</span>
+                    <span><strong>Parking Availability:</strong> 50 spots available</span>
+                    <span><strong>Special Promotions:</strong> 20% off on all BBQ dishes</span>
+                </div>
+                <button class="event-button" id="learn-more-bbq">Learn More</button>
+            </div>
+        </div>
+
+        <!-- Example Event Item -->
+        <div class="event-item">
+            <img src="../images/wine-tasting.jpg" alt="Wine Tasting Week">
+            <div>
+                <h3>Wine Tasting Week</h3>
+                <p>Explore a curated selection of wines paired with our chef's specialties.</p>
+                <div class="event-details">
+                    <span style="padding-right: 17px;"><strong>Date:</strong> September 5-10, 2024</span>
+                    <span style="padding-right: 17px;"><strong>Table Capacity:</strong> Up to 50 guests</span>
+                    <span style="padding-right: 15px;"><strong>Parking Availability:</strong> 30 spots available</span>
+                    <span style="padding-right: 0;"><strong>Special Promotions:</strong> Complimentary wine glass with each ticket</span>
+                </div>
+                <button class="event-button" id="learn-more-wine">Learn More</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 The Gallery Cafe</p>
+    </footer>
+
+    <script src="../js/events.js"></script>
+
+</body>
+</html>

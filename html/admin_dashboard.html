@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard - The Gallery Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            background-image: url(../images/img3.jpg);
+            padding-bottom: 130px;
+        }
+        header img {
+            max-height: 60px;
+            position: relative;
+            top: 10px;
+            left: -40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="../images/logo2.png" alt="The Gallery Cafe Logo">The Gallery Cafe</h1>
+        <nav>
+            <ul>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <div class="dashboard-container">
+        <main class="main-content transparent-background">
+            <h2>Admin Dashboard</h2>
+            <div id="adminOptions">
+                <button onclick="showSection('createUser')">Create User</button>
+                <button onclick="showSection('foodMenu')">Food Menu</button>
+                <button onclick="showSection('customerFeedback')">Customer Feedback</button>
+                <button onclick="showSection('changePassword')">Change Password</button>
+            </div>
+    
+            <div id="createUser" class="admin-section" style="display:none;">
+                <h3>Create User</h3>
+                <form id="createUserForm">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fName" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="uName" required><br>
+                    <label for="role">Role:</label>
+                    <select id="role" name="uRole" required>
+                        <option value="admin">Admin</option>
+                        <option value="staff">Staff</option>
+                    </select><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="pWord" required><br>
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+                    <div class="password-toggle">
+                        <input type="checkbox" id="showPassword" onclick="togglePassword()">
+                        <label for="showPassword" class="show-password-label">Show Password</label>
+                    </div>
+                    <button type="button" onclick="createUser()">Create User</button>
+                </form>
+            </div>            
+    
+            <div id="foodMenu" class="admin-section" style="display:none;">
+                <h3>Food Menu</h3>
+                <form id="addFoodItemForm" enctype="multipart/form-data" action="../php/process_food_item.php" method="POST">
+                    <label for="foodType">Category:</label>
+                    <select id="foodType" name="fType" required>
+                        <option value="Sri Lankan">Sri Lankan</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Beverages">Beverages</option>
+                    </select><br>
+                    <label for="foodName">Name:</label>
+                    <input type="text" id="foodName" name="fName" required><br>
+                    <label for="foodDescription">Description:</label>
+                    <textarea id="foodDescription" name="fDescription" required></textarea><br>
+                    <label for="foodPrice">Price:</label>
+                    <input type="text" id="foodPrice" name="fPrice" required><br>
+                    <label for="foodQuantity">Quantity:</label>
+                    <input type="number" id="foodQuantity" name="quantity" required><br>
+                    <label for="foodImage">Image:</label>
+                    <input type="file" id="foodImage" name="fImage" accept="image/*"><br>
+                    <button id="submitButton" type="submit">Add Food Item</button>
+                </form>
+                <h3>Existing Food Items</h3>
+                <table id="foodItemsTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Food items will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <div id="customerFeedback" class="admin-section">
+                <h3>Customer Feedback</h3>
+                <table id="customerFeedbackTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Feedback</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Customer feedback rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>                        
+    
+            <div id="changePassword" class="admin-section" style="display:none;">
+                <h3>Change Password</h3>
+                <form id="changePasswordForm">
+                    <label for="usernameChangePassword">Username:</label>
+                    <input type="text" id="usernameChangePassword" name="uName" required><br>
+                    <label for="oldPassword">Old Password:</label>
+                    <input type="password" id="oldPassword" name="oldPassword" required><br>
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required><br>
+                    <label for="confirmNewPassword">Confirm New Password:</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
+                    <div class="password-toggle">
+                        <input type="checkbox" id="showPasswordChangePassword" onclick="togglePassword()">
+                        <label for="showPasswordChangePassword" class="show-password-label">Show Password</label>
+                    </div>
+                    <button type="button" onclick="changePassword()">Change Password</button>
+                </form>                
+            </div>                        
+        </main>
+    </div>    
+
+    <footer>
+        <p>&copy; 2024 The Gallery Cafe. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/admin_dashboard.js"></script>    
+    
+</body>
+</html>

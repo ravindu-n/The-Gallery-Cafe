@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url(../images/img3.jpg);
+      }
+      header img {
+        max-height: 60px; 
+        position: relative;
+        top: 10px; 
+        left: -40px; 
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer Dashboard - The Gallery Cafe</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img src="../images/logo2.png" alt="The Gallery Cafe Logo" />The Gallery
+        Cafe
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="dashboard-container">
+      <main class="main-content transparent-background">
+        <h2>Customer Dashboard</h2>
+        <p><strong>Parking is available</strong></p>
+        <div id="customerOptions">
+          <button onclick="showSection('makeReservation')">
+            Make a Reservation
+          </button>
+          <button onclick="showSection('customerFeedback')">
+            Customer Feedback
+          </button>
+          <button onclick="showSection('orderFood')">Order Food</button>
+          <button onclick="showSection('currentOrder')">Current Order</button>
+        </div>
+
+        <div
+          id="makeReservation"
+          class="customer-section"
+          style="display: none"
+        >
+          <h3>Make a Reservation</h3>
+          <form id="reservationForm" onsubmit="reserve(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required /><br />
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required /><br />
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required /><br />
+            <label for="guests">Number of Guests:</label>
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              required
+              min="1"
+              max="20"
+            /><br />
+            <label for="tableCapacity">Table Capacity:</label>
+            <select id="tableCapacity" name="tableCapacity" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option></select
+            ><br />
+            <div id="reservationError" class="error-message"></div>
+            <div id="reservationSuccess" class="success-message"></div>
+            <br />
+            <div class="action-buttons">
+              <button type="submit">Make Reservation</button>
+            </div>
+          </form>
+        </div>
+
+        <div
+          id="customerFeedback"
+          class="customer-section"
+          style="display: none"
+        >
+          <h3>Customer Feedback</h3>
+          <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" required /><br />
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required /><br />
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Very Good</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Fair</option>
+              <option value="1">1 - Poor</option></select
+            ><br />
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea
+            ><br />
+            <button type="submit">Submit Feedback</button>
+          </form>
+          <div
+            class="review-section"
+            id="reviewSection"
+            style="padding-bottom: 20px"
+          >
+            <h3>Customer Reviews</h3>
+            <!-- Dynamic content will be inserted here -->
+          </div>
+        </div>
+
+        <div id="orderFood" class="customer-section" style="display: none">
+          <h3>Order Food</h3>
+          <div id="food-menu">
+            <!-- Dynamic content will be inserted here -->
+          </div>
+          <button type="button" onclick="initiateCheckout()">
+            Proceed to Checkout
+          </button>
+        </div>
+
+        <div id="currentOrder" class="customer-section" style="display: none">
+          <h3>Current Order</h3>
+          <ul id="currentOrderList"></ul>
+        </div>
+
+        <section
+          id="checkoutSection"
+          class="customer-section"
+          style="display: none"
+        >
+          <div class="checkout-container">
+            <h3>Checkout</h3>
+            <form id="checkoutForm" onsubmit="completeCheckout(event)">
+              <label for="deliveryOption">Option:</label>
+              <select id="deliveryOption" name="deliveryOption" required>
+                <option value="takeaway">Take Away</option>
+                <option value="delivery">Delivery</option></select
+              ><br />
+
+              <div id="deliveryAddressSection" style="display: none">
+                <label for="address">Delivery Address:</label>
+                <input type="text" id="address" name="address" /><br />
+              </div>
+
+              <label for="paymentMethod">Payment Method:</label>
+              <select id="paymentMethod" name="paymentMethod" required>
+                <option value="card">Credit/Debit Card</option>
+                <option value="cash">Cash on Delivery</option></select
+              ><br />
+
+              <div id="cardDetailsSection" style="display: none">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" /><br />
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" /><br />
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" /><br />
+              </div>
+
+              <button type="submit">Complete Order</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 The Gallery Cafe. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/customer_dashboard.js"></script>
+  </body>
+</html>
