@@ -35,14 +35,14 @@ The website includes six main navigation buttons:<br>
 * Backend: PHP
 * Database: MySQL, managed via phpMyAdmin (XAMPP)
 # Installation 
-1 Set Up XAMPP:
+##### 1 Set Up XAMPP:
 * Start Apache and MySQL in the XAMPP control panel.<br>
-2 Database Configuration:
+##### 2 Database Configuration:
 * Open phpMyAdmin and create a new database, e.g., gallery_cafe_db.
 * Import the provided SQL file into the database to set up tables and initial data.<br>
-3 Configure Database Connection:
+##### 3 Configure Database Connection:
 * Edit the database configuration in the PHP files (e.g., config.php) to match your database credentials.<br>
-4 Launch the Application:
+##### 4 Launch the Application:
 * Place the project files in the htdocs folder in XAMPP.
 * Access the site by navigating to http://localhost/The_Gallery_Cafe/html/index.html in your browser.
 # Usage
